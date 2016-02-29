@@ -1,3 +1,20 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Post相关的样式 */
+.show-post {
+  .post-content {
+    line-height: 1.9em;
+    font-size: 0.95em;
+  }
+  .post-extra {
+    font-size: 0.88em;
+    line-height: 24px;
+    i {
+      margin-right: 5px;
+    }
+    span, div {
+      color: #888;
+    }
+    .post-date {
+      margin-right: 8px;
+    }
+  }
+}
