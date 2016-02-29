@@ -1,0 +1,63 @@
+/* 
+ * 共享样式 
+ */
+@import "libs/meta.css.scss";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  background: white;
+}
+p {
+  color: $deep_gray;
+}
+h1 {
+  color: $deep_gray;
+}
+h2 {
+  color: $deep_gray;
+}
+h3 {
+  color: $deep_gray;
+}
+h4 {
+  color: $deep_gray;
+}
+h5 {
+  color: $deep_gray;
+}
+h6 {
+  color: $deep_gray;
+}
+div {
+  color: $deep_gray;
+}
+a {
+  color: $deep_gray;
+}
+.clear {
+  clear: both;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+/* main page style */
+.main-title, .main-content {
+  margin-left: $side_details_width + 42px;
+}
+.main-title {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  h3 {
+    margin: 0;
+  }
+}
+.main-content {
+  padding: 15px 10px;
+}

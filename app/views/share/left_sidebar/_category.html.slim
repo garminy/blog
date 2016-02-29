@@ -1,0 +1,8 @@
+.side-detail#articles_bar
+  .sidebar-title
+    h3.pull-left
+      | 目录 / Category
+    i.icon.pull-right
+      | < 
+    .clear
+  = render partial: 'posts/sidebar_item', collection: preview_posts, as: :post

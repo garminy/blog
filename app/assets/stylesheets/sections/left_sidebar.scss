@@ -1,0 +1,77 @@
+/*
+ * 左侧边栏样式
+ * */
+@import "libs/meta.css.scss";
+
+.left-sidebar {
+  display: inline-block;
+  float: left;
+  height: 100%;
+
+  .sidebar-title {
+    padding: 12px 5px;
+    border-bottom: 1px solid #DDD;
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .icons-bar, .side-details {
+    float: left;
+    border-right: 1px solid #CCC;
+  }
+  .icons-bar {
+    width: 30px;
+    padding: 0 5px;
+    background-color: #333;
+    color: white;
+    z-index: 1000;
+    .icon-item {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  }
+  .side-details {
+    width: $side_details_width;
+    position: relative;
+    .side-detail {
+      position: absolute;
+      background: white;
+      width: $side_details_width;
+      height: 100%;
+    }
+    #articles_bar {
+      left: 0;
+      z-index: -2;
+    }
+    #tags_bar {
+      left: -$side_details_width;
+      z-index: -1;
+    }
+  }
+  .side-post {
+    border-bottom: 1px solid #DDD;
+    padding: 8px 5px;
+    .side-post-title {
+      margin: 0 0 8px 0;
+    }
+    .side-post-abstract {
+      height: 66px;
+      line-height: 22px;
+      overflow: hidden;
+    }
+  }
+  .side-tag {
+    border-bottom: 1px solid #DDD;
+    padding: 8px 5px;
+    .side-tag-name, .side-tag-count {
+      display: inline-block;
+    }
+    .side-tag-name {
+      float: left;
+    }
+    .side-tag-count {
+      float: right;
+    }
+  }
+}

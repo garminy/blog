@@ -1,0 +1,25 @@
+// 主页面左侧边栏
+.left-sidebar#left_sidebar
+  // 小icon缩略条
+  .icons-bar#icons-bar
+    .icon-item.chosen#icon_articles
+      | 文章
+    .icon-item#icon_tags
+      | Tag
+    /.icon-item data*{ item: 'mail' }
+      | Mail
+
+    // 当前sidebar列表详情：
+    //  1. 文章列表
+    //  2. 标签
+  .side-details
+    = render 'share/left_sidebar/category', preview_posts: @preview_posts
+    = render 'share/left_sidebar/tags', tags: @tags
+  .clear
+
+
+- content_for :page_js do
+  javascript:
+    $(function(){
+      $.bind_left_sidebar();
+    })
