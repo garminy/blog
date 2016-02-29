@@ -15,15 +15,18 @@ set_left_sidebar_margin = ->
     margin: "#{window_height / 2 - 100}px 0 0"
 
 bind_sidebar_icons = ->
+  sidebar_width = $('#tags_bar').width()
   $('#icon_tags').click ->
     if !$(this).hasClass('chosen')
-      $('#tags_bar').animate({left: '0px'}, 200)
+      $('#mask').fadeIn('fast')
+      $('#tags_bar').animate({left: '0px'}, 130)
       clear_icon_chosen()
       $(this).addClass('chosen')
 
   $('#icon_articles').click ->
     if !$(this).hasClass('chosen')
-      $('#tags_bar').animate({left: '-200px'}, 200)
+      $('#mask').fadeOut('fast')
+      $('#tags_bar').animate({left: -sidebar_width}, 130)
       clear_icon_chosen()
       $(this).addClass('chosen')
 
