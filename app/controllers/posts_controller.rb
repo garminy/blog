@@ -72,7 +72,7 @@ class PostsController < ApplicationController
 
   def tags
     @tag = Tag.find_by_name(params[:name])
-    @posts = Post.tagged_with(@tag.name)
+    @posts = Post.tagged_with(@tag.name).paginate(page: params[:page])
   end
 
   private
