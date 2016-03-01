@@ -9,11 +9,17 @@
   height: 100%;
 
   .sidebar-title {
-    padding: 12px 5px;
+    padding: 12px 8px;
     border-bottom: 1px solid #DDD;
     h3 {
       margin: 0;
     }
+    i {
+      font-size: 18px;
+    }
+  }
+  .sidebar-return {
+    cursor: pointer;
   }
 
   .icons-bar, .side-details {
@@ -21,32 +27,50 @@
     border-right: 1px solid #CCC;
   }
   .icons-bar {
-    width: 30px;
-    padding: 0 5px;
+    width: 47px;
     background-color: #333;
     color: white;
-    z-index: 1000;
+    z-index: 100;
+    position: absolute;
+    left: -47px;
+    text-align: center;
     .icon-item {
       margin-top: 10px;
       font-size: 13px;
+      i {
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        display: block;
+      }
+      &.chosen {
+        background: #555;
+      }
     }
+  }
+  .icons-bar-placeholder {
+    width: 47px;
+    height: 500px;
   }
   .side-details {
     width: $side_details_width;
     position: relative;
+    display: none;
     .side-detail {
-      position: absolute;
       background: white;
       width: $side_details_width;
       height: 100%;
+      float: left;
     }
     #articles_bar {
       left: 0;
-      z-index: -10;
+      z-index: 9;
+      position: absolute;
     }
     #tags_bar {
       left: -$side_details_width;
-      z-index: -1;
+      z-index: 10;
+      position: absolute;
     }
     .mask {
       position: absolute;
@@ -59,9 +83,10 @@
       z-index: -5;
     }
   }
-  .side-post {
+  a.side-post {
+    display: block;
     border-bottom: 1px solid #DDD;
-    padding: 8px 5px;
+    padding: 8px;
     .side-post-title {
       margin: 0 0 8px 0;
     }
@@ -71,10 +96,15 @@
       overflow: hidden;
       font-size: 12px;
     }
+    &:hover {
+      background: #DDD;
+      color: white;
+    }
   }
-  .side-tag {
+  a.side-tag {
+    display: block;
     border-bottom: 1px solid #DDD;
-    padding: 8px 5px;
+    padding: 10px;
     .side-tag-name, .side-tag-count {
       display: inline-block;
     }

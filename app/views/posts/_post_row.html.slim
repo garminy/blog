@@ -1,0 +1,21 @@
+.show-post.post-row#show_post
+  h2.post-title
+    = post.title
+
+  .post-extra
+    .author-info
+      i.ion-person
+      span.post-date
+        = "王若愚Max"
+        |  发表于 
+        = post.created_at.to_date
+        
+    .tags-info
+      i.ion-pricetags
+      = post.tag_list.join(" · ")
+
+  .post-content
+    = simple_format post.content.truncate(100)
+
+  .counter
+    = post_counter + 1

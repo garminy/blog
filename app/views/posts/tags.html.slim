@@ -1,0 +1,17 @@
+.main-title#main_title
+  h3
+    | Tag · 
+    = @tag.name
+
+.main-content
+  = render partial: 'post_row', collection: @posts, as: :post
+
+- content_for :page_js do 
+  javascript:
+    $(function(){
+      setTimeout(function(){
+        $('#icon_tags').click();
+      }, 1000)
+    })
+
+// TODO: add pagination

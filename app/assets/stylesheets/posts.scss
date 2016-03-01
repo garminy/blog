@@ -17,4 +17,26 @@
       margin-right: 8px;
     }
   }
+  &.post-row {
+    border: 1px solid #DDD;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    position: relative;
+  }
+  .counter {
+    border-bottom: 1px solid #DDD;
+    position: absolute;
+    right: -19px;
+    top: -1px;
+    width: 60px;
+    height: 25px;
+    transform: rotate(45deg);
+    color: #999;
+    text-align: center;
+    -ms-transform: rotate(45deg);		/* IE 9 */
+    -webkit-transform: rotate(45deg);	/* Safari and Chrome */
+    -o-transform: rotate(45deg);		/* Opera */
+    -moz-transform: rotate(45deg);		/* Firefox */
+  }
 }
