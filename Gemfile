@@ -33,6 +33,8 @@ group :development do
   gem "binding_of_caller"
   gem 'pry-rails'
   gem "capistrano", "~> 3.4"
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
