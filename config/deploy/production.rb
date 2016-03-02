@@ -50,6 +50,7 @@
 # ------------------------------------
 server '54.223.165.26',
   user: 'ubuntu',
+  primary: true, 
   roles: %w{web app db},
   ssh_options: {
     # user: 'user_name', # overrides user setting above

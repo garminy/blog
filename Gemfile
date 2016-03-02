@@ -32,10 +32,12 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'pry-rails'
-  gem "capistrano", "~> 3.4"
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
 end
+gem "capistrano", "~> 3.4"
+gem 'capistrano-rails'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
