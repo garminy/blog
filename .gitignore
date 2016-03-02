@@ -57,3 +57,4 @@ build/
 .rvmrc
 *.swp
 *.swo
+.ruby-version
