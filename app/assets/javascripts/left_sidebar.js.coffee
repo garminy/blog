@@ -15,8 +15,8 @@ jQuery ->
     window_height = $(window).height()
     $('#left_sidebar .icons-bar, #left_sidebar').height(document_height).animate({ left: 0 }, 150, ->
       setTimeout ->
-        $('#left_sidebar .side-details').height(document_height).fadeIn()
         $.reset_container_size().show_container('fast')
+        $('#left_sidebar .side-details').height(document_height).fadeIn()
       , 150
     )
     $('#icons-bar .icon-item:first').css
