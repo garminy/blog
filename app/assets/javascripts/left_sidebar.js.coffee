@@ -13,10 +13,11 @@ jQuery ->
   set_left_sidebar_margin = ->
     document_height = $(document).height()
     window_height = $(window).height()
-    $('#left_sidebar .icons-bar, #left_sidebar').height(document_height).animate({ left: 0 }, 150, ->
+    $('#left_sidebar .icons-bar, #left_sidebar').animate({ left: 0 }, 150, ->
       setTimeout ->
         $.reset_container_size().show_container('fast')
         $('#left_sidebar .side-details').height(document_height).fadeIn()
+        $('#left_sidebar .icons-bar, #left_sidebar').height(document_height)
       , 150
     )
     $('#icons-bar .icon-item:first').css
