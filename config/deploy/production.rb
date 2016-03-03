@@ -48,7 +48,8 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server '54.223.165.26',
+# 54.223.165.26
+server '52.79.121.245',
   user: 'ubuntu',
   primary: true, 
   roles: %w{web app db},
