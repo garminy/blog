@@ -38,6 +38,9 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :bundle_without, %w{development test docker}.join(' ')
 
 namespace :deploy do
+  on roles(:app), in: :sequence, wait: 5 do
+    execute :touch, release_path.join('tmp/restart.txt')
+  end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

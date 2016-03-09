@@ -2,4 +2,4 @@
   h4.side-post-title
     = post.title
   .side-post-abstract
-    = post.content.truncate(100)
+    = strip_tags post.content.truncate(100)
