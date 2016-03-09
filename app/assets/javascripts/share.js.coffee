@@ -11,7 +11,7 @@ jQuery ->
     $('#container').width($(window).width() - $('#left_sidebar').outerWidth() - scrollbarWidth())
     $
   
-  $.show_container = (speed)->
-    $('#container').slideDown(speed || 'normal')
+  $.show_container = (speed, callback)->
+    $('#container').slideDown(speed || 'normal', callback)
   
   # $(window).resize(reset_container_size)

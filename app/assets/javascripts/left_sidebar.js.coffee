@@ -15,12 +15,20 @@ jQuery ->
     window_height = $(window).height()
     $('#left_sidebar .icons-bar, #left_sidebar').animate({ left: 0 }, 150, ->
       setTimeout ->
-        $.reset_container_size().show_container('fast')
-        $('#left_sidebar .side-details').height(document_height).fadeIn()
+        $('#left_sidebar .side-details').height(document_height)
         $('#left_sidebar .icons-bar, #left_sidebar').height(document_height)
+
+        $.show_container('fast', ->
+          document_height = $(document).height()
+          window_height = $(window).height()
+
+          $('#left_sidebar .side-details').height(document_height).fadeIn()
+          $('#left_sidebar .icons-bar, #left_sidebar').height(document_height)
+          $.reset_container_size()
+        )
       , 150
     )
-    $('#icons-bar .icon-item:first').css
+    $('#icons-bar .icon-items').css
       margin: "#{window_height / 2 - 35}px 0 0"
 
   bind_sidebar_icons = ->
@@ -47,12 +55,19 @@ jQuery ->
   show_left_sidebar = ->
     left_sidebar = $('#left_sidebar')
     left_sidebar.animate({ marginLeft: 0 }, 150)
+    $('#main_title').animate({ width: $(document).width() - $('#icons-bar').width() - 260 }, 150)
+
+  hide_left_sidebar = ->
+    left_sidebar = $('#left_sidebar')
+    left_sidebar_width = left_sidebar.width()
+    left_sidebar.animate({ marginLeft: -left_sidebar_width + 46 }, 150)
+    $('#main_title').animate({ width: $(document).width() - $('#icons-bar').width() }, 150)
+    # clear_icon_chosen()
 
   bind_return = ->
     $(document).delegate '.sidebar-return', 'click', ->
       left_sidebar = $('#left_sidebar')
-      left_sidebar_width = left_sidebar.width()
-
-      left_sidebar.animate({ marginLeft: -left_sidebar_width + 46 }, 150)
-      clear_icon_chosen()
-
+      if parseInt(left_sidebar.css('marginLeft')) < 0
+        show_left_sidebar()
+      else
+        hide_left_sidebar()
