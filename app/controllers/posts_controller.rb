@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @default_post = @post
   end
 
   # GET /posts/new

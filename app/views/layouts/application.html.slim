@@ -10,3 +10,5 @@ html
   body
     .container.main-container
       = yield
+
+    = yield :page_js if content_for?(:page_js)

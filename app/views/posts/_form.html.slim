@@ -19,7 +19,15 @@
     = f.text_field :tag_list
   .field
     = f.label :content
-    = f.text_area :content
+    .editor-wrapper
+      = f.text_area :content, id: "editor"
   .actions 
     = f.submit class: 'btn'
     = link_to "Back", posts_path, class: 'back-link'
+
+- content_for :page_js do
+  javascript:
+    $(function(){
+      var editor = new Editor();
+      editor.render();
+    })
