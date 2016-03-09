@@ -4,7 +4,7 @@ html
   head
     title 
       | 王若愚的博客
-      = @default_post ? " | #{@default_post.title}" : ""
+      = @post ? " | #{@post.title}" : ""
     = csrf_meta_tags
 
     /= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'

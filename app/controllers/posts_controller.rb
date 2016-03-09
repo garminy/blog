@@ -8,13 +8,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index 
     @posts = @preview_posts
-    @default_post = @posts.first
+    @post = @posts.first
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @default_post = @post
   end
 
   # GET /posts/new
