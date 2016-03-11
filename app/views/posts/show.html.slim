@@ -1,11 +1,23 @@
-.main-title#main_title
+/.main-title#main_title
   i.sidebar-return.ion-grid
   h3
     = @post.title
 
-- if notice.present?
+/- if notice.present?
   .notice#notice
     = notice
 
-.main-content
+/.main-content
   = render 'post', post: @post
+
+#post_area
+- content_for :page_js do
+  javascript:
+    $(function(){
+      ReactDOM.render(
+        React.createElement(MainContent, null),
+        document.getElementById('post_area')
+      );
+
+      $.bind_left_sidebar();
+    })

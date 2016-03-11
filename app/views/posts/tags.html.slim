@@ -1,18 +1,26 @@
-.main-title#main_title
-  i.sidebar-return.ion-grid
-  h3
-    | Tag · 
-    = @tag.name
+= render "share/left_sidebar"
+.container.pull-left#container
+  .main-title#main_title
+    i.sidebar-return.ion-grid
+    h3
+      | Tag · 
+      = @tag.name
 
-.main-content
-  = render partial: 'post_row', collection: @posts, as: :post
+  .main-content
+    = render partial: 'post_row', collection: @posts, as: :post
 
-- content_for :page_js do 
+// TODO: add pagination
+/#post_area
+- content_for :page_js do
   javascript:
     $(function(){
+      //ReactDOM.render(
+      //  React.createElement(MainContent, null),
+      //  document.getElementById('post_area')
+      //);
+
+      $.bind_left_sidebar();
       setTimeout(function(){
         $('#icon_tags').click();
       }, 1000)
     })
-
-// TODO: add pagination

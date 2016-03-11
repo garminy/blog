@@ -1,38 +1,47 @@
 source 'https://ruby.taobao.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+### Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 
-# database
+### database
 gem 'mysql2', '~> 0.3.20'
 
-# assets, templates and front-end stuff
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
+### assets, templates and front-end stuff
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
+
+# CSS
+gem 'sass-rails', '~> 5.0'
+# material design css and fonts
+# gem 'material_design_lite-rails'
+# gem 'material_icons'
+
+# JavaScript
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'react-rails', '~> 1.6.0'
+# gem 'therubyracer', platforms: :ruby
+
+# HTML Templates
 gem 'slim-rails'
 
-# Use Puma as the app server
-gem 'puma'
-
-# useful tools
+### useful tools
 gem 'will_paginate'
 gem 'awesome_print'
 gem 'acts-as-taggable-on'
+gem 'jbuilder', '~> 2.0'
+gem 'puma'
 
-# for dev
+# cache
+# gem 'actionpack-page_caching'
+
+### for dev
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'pry-rails'
 end
+
+### dev-ops
 gem "capistrano", "~> 3.4"
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
@@ -42,7 +51,6 @@ gem 'capistrano-bundler'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

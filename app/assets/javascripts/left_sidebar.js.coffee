@@ -14,19 +14,17 @@ jQuery ->
     document_height = $(document).height()
     window_height = $(window).height()
     $('#left_sidebar .icons-bar, #left_sidebar').animate({ left: 0 }, 150, ->
-      setTimeout ->
-        $('#left_sidebar .side-details').height(document_height)
+      $('#left_sidebar .side-details').height(document_height)
+      $('#left_sidebar .icons-bar, #left_sidebar').height(document_height)
+
+      $.show_container('fast', ->
+        document_height = $(document).height()
+        window_height = $(window).height()
+
+        $('#left_sidebar .side-details').height(document_height).fadeIn()
         $('#left_sidebar .icons-bar, #left_sidebar').height(document_height)
-
-        $.show_container('fast', ->
-          document_height = $(document).height()
-          window_height = $(window).height()
-
-          $('#left_sidebar .side-details').height(document_height).fadeIn()
-          $('#left_sidebar .icons-bar, #left_sidebar').height(document_height)
-          $.reset_container_size()
-        )
-      , 150
+        $.reset_container_size()
+      )
     )
     $('#icons-bar .icon-items').css
       margin: "#{window_height / 2 - 35}px 0 0"

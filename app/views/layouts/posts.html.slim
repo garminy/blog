@@ -13,8 +13,7 @@ html
     = javascript_include_tag 'application'
 
   body
-    = render "share/left_sidebar"
-    .container.pull-left#container.hidden
-      = yield
+    /= render "share/left_sidebar"
+    = yield
 
     = yield :page_js if content_for?(:page_js)
