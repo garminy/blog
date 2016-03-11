@@ -230,7 +230,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 4.2)
-  react-rails (~> 1.6.0)
+  react-rails
   sass-rails (~> 5.0)
   slim-rails
   spring

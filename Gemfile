@@ -18,7 +18,7 @@ gem 'sass-rails', '~> 5.0'
 # JavaScript
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'react-rails', '~> 1.6.0'
+gem 'react-rails'
 gem 'therubyracer', platforms: :ruby
 
 # HTML Templates
