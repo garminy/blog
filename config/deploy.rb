@@ -9,7 +9,6 @@ set :repo_url, 'git@github.com:wrymax/blog.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/blog'
-set :branch, :master
 
 # Default value for :scm is :git
 # set :scm, :git
