@@ -16,4 +16,3 @@
 //= require components
 //= require_directory ./components
 //= require_directory ./effects
-//= require_directory ./pages
