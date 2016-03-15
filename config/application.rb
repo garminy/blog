@@ -20,17 +20,17 @@ module Blog
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.react.jsx_transformer_class = React::JSX::JSXTransformer
-    # config.browserify_rails.commandline_options = "--transform reactify --extension=\".jsx\""
-    config.browserify_rails.commandline_options = "-t reactify --extension=\".js.jsx\""
+    # config.browserify_rails.commandline_options = "-t reactify --extension=\".js.jsx\""
+    config.browserify_rails.commandline_options = "--transform reactify --extension='.jsx'"
     # config.browserify_rails.commandline_options = '-t coffeeify --extension=".js.coffee"'
 
 
-    # Browserify config
-    config.browserify_rails.paths << /vendor\/assets\/javascripts\/module\.js/
-    config.browserify_rails.source_map_environments << "development"
-    config.browserify_rails.evaluate_node_modules = true
-    config.browserify_rails.force = ->(file) { File.extname(file) == ".ts" }
-    config.browserify_rails.commandline_options = ["-t browserify-shim", "--fast"]
-    config.browserify_rails.commandline_options = "-t browserify-shim --fast"
+    # # Browserify config
+    # config.browserify_rails.paths << /vendor\/assets\/javascripts\/module\.js/
+    # config.browserify_rails.source_map_environments << "development"
+    # config.browserify_rails.evaluate_node_modules = true
+    # config.browserify_rails.force = ->(file) { File.extname(file) == ".ts" }
+    # config.browserify_rails.commandline_options = ["-t browserify-shim", "--fast"]
+    # config.browserify_rails.commandline_options = "-t browserify-shim --fast"
   end
 end
