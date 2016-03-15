@@ -19,6 +19,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'react-rails'
+gem 'sprockets-coffee-react',  '~> 3.0.1'   # Preprocessor for Coffeescript with React JSX (CJSX)
 gem 'browserify-rails'
 gem 'therubyracer', platforms: :ruby
 
