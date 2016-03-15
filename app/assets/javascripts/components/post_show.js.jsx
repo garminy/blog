@@ -1,6 +1,5 @@
 /* 主要展示区域 */
-
-var PostShow = React.createClass({
+PostShow = React.createClass({
   getInitialState: function() {
     return {
       data: {
@@ -62,4 +61,3 @@ var PostShow = React.createClass({
     );
   }
 })
-
