@@ -1,24 +1,7 @@
-/.main-title#main_title
-  i.sidebar-return.ion-grid
-  h3
-    = @post.title
-
-/- if notice.present?
-  .notice#notice
-    = notice
-
-/.main-content
-  = render 'post', post: @post
-
 = react_component "PostShow", id: @post.id
-/#post_area
+
 - content_for :page_js do
   javascript:
     $(function(){
-      /*ReactDOM.render(*/
-      /*  React.createElement(MainContent, null),*/
-      /*  document.getElementById('post_area')*/
-      /*);*/
-
       $.bind_left_sidebar();
     })

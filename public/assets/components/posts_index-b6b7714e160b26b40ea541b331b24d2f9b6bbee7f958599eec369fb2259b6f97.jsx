@@ -1,6 +1,6 @@
 /* 主要展示区域 */
 
-var PostShow = React.createClass({
+var PostsIndex = React.createClass({
   getInitialState: function() {
     return {
       data: {
@@ -11,11 +11,10 @@ var PostShow = React.createClass({
     }
   }, 
 
-  /* 加载组件 */
   componentDidMount: function() {
     var that = this;
     return $.ajax({
-      url: "/posts/" + this.props.id + ".json", 
+      url: "/posts.json", 
       dataType: 'json',
       cache: false,
       success: function(data) {
@@ -62,4 +61,3 @@ var PostShow = React.createClass({
     );
   }
 })
-

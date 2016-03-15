@@ -11,7 +11,6 @@ var PostShow = React.createClass({
     }
   }, 
 
-  /* 加载组件 */
   componentDidMount: function() {
     var that = this;
     return $.ajax({
