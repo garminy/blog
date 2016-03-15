@@ -1,0 +1,34 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "The blog of Max Wang",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"No test now.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrymax/blog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "wrymax",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrymax/blog/issues"
+  },
+  "homepage": "https://github.com/wrymax/blog#readme",
+  "dependencies" : {
+    "browserify": "^10.2.4",
+    "browserify-incremental": "^3.0.1",
+    "reactify": "^1.1.1",
+    "react": ">=0.14.0"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

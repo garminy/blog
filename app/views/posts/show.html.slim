@@ -10,14 +10,15 @@
 /.main-content
   = render 'post', post: @post
 
-#post_area
+= react_component "PostShow", id: @post.id
+/#post_area
 - content_for :page_js do
   javascript:
     $(function(){
-      ReactDOM.render(
-        React.createElement(MainContent, null),
-        document.getElementById('post_area')
-      );
+      /*ReactDOM.render(*/
+      /*  React.createElement(MainContent, null),*/
+      /*  document.getElementById('post_area')*/
+      /*);*/
 
       $.bind_left_sidebar();
     })

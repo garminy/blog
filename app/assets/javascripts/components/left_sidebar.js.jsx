@@ -1,4 +1,9 @@
 /* .left-sidebar */
+/*
+ * props
+ *  @params posts
+ *  @params tags
+ * */
 var LeftSidebar = React.createClass({
 
   render: function() {

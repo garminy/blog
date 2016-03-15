@@ -1,6 +1,6 @@
 /* 主要展示区域 */
 
-var MainContent = React.createClass({
+var PostsIndex = React.createClass({
   getInitialState: function() {
     return {
       data: {

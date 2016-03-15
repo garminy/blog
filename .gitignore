@@ -58,3 +58,5 @@ build/
 *.swp
 *.swo
 # .ruby-version
+.idea/*
+node_modules/

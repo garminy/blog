@@ -17,7 +17,7 @@
     = render 'share/left_sidebar/tags', tags: @tags
   .clear
 
-
+= react_component "PostsIndex"
 #post_area
   /#left_sidebar
   /.main-title#main_title
@@ -32,10 +32,10 @@
 - content_for :page_js do
   javascript:
     $(function(){
-      ReactDOM.render(
-        React.createElement(MainContent, null),
-        document.getElementById('post_area')
-      );
+      /*ReactDOM.render(*/
+      /*  React.createElement(MainContent, null),*/
+      /*  document.getElementById('post_area')*/
+      /*);*/
 
       $.bind_left_sidebar();
     })

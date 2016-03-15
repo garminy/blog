@@ -10,9 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require react
-//= require react_ujs
 //= require jquery
 //= require jquery_ujs
 //= require_directory ./libs
-//= require_directory ./
+//= require components
+//= require_directory ./components
+//= require_directory ./effects
+//= require_directory ./pages
