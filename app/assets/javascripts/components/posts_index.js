@@ -5,7 +5,6 @@ import LeftSidebar from './left_sidebar';
 import MainTitle from './main_title';
 import Post from './post';
 
-console.log(MainTitle)
 
 const PostsIndex = React.createClass({
   getInitialState: function() {

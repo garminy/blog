@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 import { render } from 'react-dom'
-// import PostsIndex from 'PostsIndex';
-import PostsIndex from './components/posts_index';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-console.log(PostsIndex);
-console.log($)
-render((
-    <PostsIndex>
-    </PostsIndex>
-  ), 
-  document.getElementById('post_area')
+import PostsIndex from './components/posts_index'
+
+
+let rootElement = document.getElementById('post_area')
+render(
+  <PostsIndex />,
+  rootElement
 );

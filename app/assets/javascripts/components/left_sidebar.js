@@ -9,7 +9,6 @@ import Category from './category';
 import TagsList from './tags_list';
 
 const LeftSidebar = React.createClass({
-
   render: function() {
     return (
       <div className={"left-sidebar"} id={"left_sidebar"}>

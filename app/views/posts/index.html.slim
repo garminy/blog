@@ -1,42 +1,7 @@
-// 主页面左侧边栏
-/.left-sidebar#left_sidebar
-  // 小icon缩略条
-  .icons-bar-placeholder.pull-left
-  .icons-bar#icons-bar
-    .icon-items
-      .icon-item.chosen#icon_articles
-        i.ion-ios-book-outline.icon-article
-      .icon-item#icon_tags
-        i.ion-ios-pricetags-outline.icon-tag
-    // 当前sidebar列表详情：
-    //  1. 文章列表
-    //  2. 标签
-  .side-details
-    .mask#mask
-    = render 'share/left_sidebar/category', preview_posts: @preview_posts
-    = render 'share/left_sidebar/tags', tags: @tags
-  .clear
-
-/= react_component "PostsIndex"
 #post_area
-  /#left_sidebar
-  /.main-title#main_title
-    i.sidebar-return.ion-grid
-    h3
-      = @post.title
-
-  /.main-content
-    = render 'post', post: @post
-
-  /.main-content
 
 - content_for :page_js do
   javascript:
     $(function(){
-      // ReactDOM.render(
-      //   React.createElement(PostsIndex, null),
-      //   document.getElementById('post_area')
-      // );
-
       $.bind_left_sidebar();
     })
