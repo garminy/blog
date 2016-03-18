@@ -1,5 +1,8 @@
 /* Tags list in left sidebar */
-var TagsList = React.createClass({
+import React from 'react';
+import Tags from './tags';
+
+const TagsList = React.createClass({
   render: function() {
     return (
       <div className={"side-detail"} id={"tags_bar"}>
@@ -14,3 +17,5 @@ var TagsList = React.createClass({
     );
   }
 })
+
+export default TagsList;

@@ -1,5 +1,8 @@
 // 必须要页面加载完成后，才能使用ReactJS
-var Posts = React.createClass({
+import React from 'react';
+import CategoryPost from './category_post';
+
+const Posts = React.createClass({
   render: function() {
     var posts = this.props.posts;
     var postNodes = posts.map(function(post){
@@ -15,3 +18,5 @@ var Posts = React.createClass({
   }
 
 })
+
+export default Posts;

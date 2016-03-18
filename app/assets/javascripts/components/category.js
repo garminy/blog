@@ -1,5 +1,8 @@
 /* category in left sidebar */
-var Category = React.createClass({
+import React from 'react';
+import Posts from './posts';
+
+const Category = React.createClass({
   render: function() {
     var posts = this.props.posts;
     console.log('--------------')
@@ -17,3 +20,5 @@ var Category = React.createClass({
     );
   }
 })
+
+export default Category;

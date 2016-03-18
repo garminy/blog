@@ -1,5 +1,7 @@
 /* Post in category */
-var CategoryPost = React.createClass({
+import React from 'react';
+
+const CategoryPost = React.createClass({
   render: function() {
     var post = this.props.post;
     return (
@@ -14,3 +16,5 @@ var CategoryPost = React.createClass({
     );
   }
 });
+
+export default CategoryPost;

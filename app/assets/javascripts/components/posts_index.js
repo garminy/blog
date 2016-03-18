@@ -1,6 +1,13 @@
 /* 主要展示区域 */
 
-var PostsIndex = React.createClass({
+import React from 'react';
+import LeftSidebar from './left_sidebar';
+import MainTitle from './main_title';
+import Post from './post';
+
+console.log(MainTitle)
+
+const PostsIndex = React.createClass({
   getInitialState: function() {
     return {
       data: {
@@ -30,24 +37,23 @@ var PostsIndex = React.createClass({
 
   render: function() {
     // variables
-    console.log(this.state.data)
+    // console.log(this.state.data)
     var post = this.state.data.post;
 
-    // left-sidebar
+    // // left-sidebar
     var leftSidebar = (
       <LeftSidebar posts={this.state.data.posts} tags={this.state.data.tags} />
     );
 
     // .main-title
     var mainTitle = (
-      <MainTitle title={post.title} />
+      <MainTitle title={post.title}></MainTitle>
     )
     // Main Post
     var postMain = (
       <Post title={post.title} content={post.content} key={post.id} createdAt={post.created_at} />
     );
 
-      // </div>
     return (
       <div>
         { leftSidebar }
@@ -61,3 +67,4 @@ var PostsIndex = React.createClass({
     );
   }
 })
+export default PostsIndex;

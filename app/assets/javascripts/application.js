@@ -13,10 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_directory ./libs
-
-//= require react
-//= require react_ujs
-/* load all components */
-//= require_tree ./components
-
 //= require_directory ./effects
+//= require react_ujs
+//= require bundle

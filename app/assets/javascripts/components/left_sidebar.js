@@ -4,7 +4,11 @@
  *  @params posts
  *  @params tags
  * */
-var LeftSidebar = React.createClass({
+import React from 'react';
+import Category from './category';
+import TagsList from './tags_list';
+
+const LeftSidebar = React.createClass({
 
   render: function() {
     return (
@@ -30,3 +34,5 @@ var LeftSidebar = React.createClass({
   }
   
 })
+
+export default LeftSidebar;

@@ -1,4 +1,5 @@
-var Tags = React.createClass({
+import React from 'react';
+const Tags = React.createClass({
   render: function() {
     var tags = this.props.tags;
     var tagNodes = tags.map(function(tag) {
@@ -22,3 +23,5 @@ var Tags = React.createClass({
     );
   }
 });
+
+export default Tags;
