@@ -39,11 +39,12 @@ const PostsIndex = React.createClass({
   },
 
   componentDidMount: function() {
+    $.bind_left_sidebar();
     this._fetchData();
   }, 
 
   componentDidUpdate: function() {
-    $.bind_left_sidebar();
+    $.setup_styles();
   }, 
 
   render: function() {

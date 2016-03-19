@@ -1,27 +1,30 @@
 /* 主要展示区域 */
+
 import React from 'react';
 import LeftSidebar from './left_sidebar';
 import MainTitle from './main_title';
 import Post from './post';
+import SearchPosts from './search_posts';
 
-const PostShow = React.createClass({
+const TaggedPosts = React.createClass({
   getInitialState: function() {
     return {
       data: {
         posts: [], 
-        post: {}, 
-        tags: []
+        preview_posts: [], 
+        tags: [], 
+        tag: {}
       }
     }
   }, 
+
   _fetchData: function() {
     var that = this;
     return $.ajax({
-      url: "/posts/" + this.props.params.id + ".json", 
+      url: `/posts/tags/${this.props.params.tag}.json`, 
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log("postShow Ajax data: ", data)
         that.setState({
           data: data
         });
@@ -30,39 +33,36 @@ const PostShow = React.createClass({
         return console.error(this.props.url, status, err.toString());
       }
     });
+  },
+
+  componentWillReceiveProps: function() {
+    this._fetchData();
+  },
+
+  componentDidMount: function() {
+    $.bind_left_sidebar();
+    this._fetchData();
   }, 
 
   componentDidUpdate: function() {
     $.setup_styles();
   }, 
 
-  componentWillReceiveProps: function() {
-    this._fetchData();
-    return true;
-  }, 
-
-  /* 加载组件 */
-  componentDidMount: function() {
-    $.bind_left_sidebar();
-    this._fetchData();
-  }, 
-
   render: function() {
-    // variables
-    var post = this.state.data.post;
+    var tag = this.state.data.tag;
 
     // left-sidebar
     var leftSidebar = (
-      <LeftSidebar posts={this.state.data.posts} tags={this.state.data.tags} />
+      <LeftSidebar posts={this.state.data.preview_posts} tags={this.state.data.tags} />
     );
 
     // .main-title
     var mainTitle = (
-      <MainTitle title={post.title} />
+      <MainTitle title={tag.name}></MainTitle>
     )
     // Main Post
-    var postMain = (
-      <Post title={post.title} content={post.content} key={post.id} createdAt={post.created_at} />
+    var postsMain = (
+      <SearchPosts posts={this.state.data.posts} />
     );
 
     return (
@@ -71,7 +71,7 @@ const PostShow = React.createClass({
         <div className={"container pull-left hidden"} id={"container"}>
           { mainTitle }
           <div className={"main-content"}>
-            { postMain }
+            { postsMain }
           </div>
         </div>
       </div>
@@ -79,4 +79,4 @@ const PostShow = React.createClass({
   }
 })
 
-export default PostShow;
+export default TaggedPosts;
