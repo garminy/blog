@@ -17,7 +17,7 @@ const PostsIndex = React.createClass({
     }
   }, 
 
-  componentDidMount: function() {
+  _fetchData: function() {
     var that = this;
     return $.ajax({
       url: "/posts.json", 
@@ -32,14 +32,24 @@ const PostsIndex = React.createClass({
         return console.error(this.props.url, status, err.toString());
       }
     });
+  },
+
+  componentWillReceiveProps: function() {
+    this._fetchData();
+  },
+
+  componentDidMount: function() {
+    this._fetchData();
+  }, 
+
+  componentDidUpdate: function() {
+    $.bind_left_sidebar();
   }, 
 
   render: function() {
-    // variables
-    // console.log(this.state.data)
     var post = this.state.data.post;
 
-    // // left-sidebar
+    // left-sidebar
     var leftSidebar = (
       <LeftSidebar posts={this.state.data.posts} tags={this.state.data.tags} />
     );

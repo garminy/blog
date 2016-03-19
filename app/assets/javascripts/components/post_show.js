@@ -1,5 +1,10 @@
 /* 主要展示区域 */
-PostShow = React.createClass({
+import React from 'react';
+import LeftSidebar from './left_sidebar';
+import MainTitle from './main_title';
+import Post from './post';
+
+const PostShow = React.createClass({
   getInitialState: function() {
     return {
       data: {
@@ -9,15 +14,14 @@ PostShow = React.createClass({
       }
     }
   }, 
-
-  /* 加载组件 */
-  componentDidMount: function() {
+  _fetchData: function() {
     var that = this;
     return $.ajax({
-      url: "/posts/" + this.props.id + ".json", 
+      url: "/posts/" + this.props.params.id + ".json", 
       dataType: 'json',
       cache: false,
       success: function(data) {
+        console.log("postShow Ajax data: ", data)
         that.setState({
           data: data
         });
@@ -28,9 +32,25 @@ PostShow = React.createClass({
     });
   }, 
 
+  componentDidUpdate: function() {
+    $.bind_left_sidebar();
+  }, 
+
+  componentWillReceiveProps: function() {
+    console.log("PostShow will receive props!")
+    this._fetchData();
+    return true;
+  }, 
+
+  /* 加载组件 */
+  componentDidMount: function() {
+    console.log('== PostShow Mounted ==');
+    this._fetchData();
+  }, 
+
   render: function() {
+    console.log('== PostShow rendered ==');
     // variables
-    console.log(this.state.data)
     var post = this.state.data.post;
 
     // left-sidebar
@@ -47,7 +67,6 @@ PostShow = React.createClass({
       <Post title={post.title} content={post.content} key={post.id} createdAt={post.created_at} />
     );
 
-      // </div>
     return (
       <div>
         { leftSidebar }
@@ -61,3 +80,5 @@ PostShow = React.createClass({
     );
   }
 })
+
+export default PostShow;
