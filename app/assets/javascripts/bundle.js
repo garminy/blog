@@ -273,10 +273,10 @@ var Post = _react2.default.createClass({
 
   componentWillReceiveProps: function componentWillReceiveProps() {
     // remove the loading mask at main post area
-    $('#show_post').remove_mask();
   },
 
   render: function render() {
+    $('#show_post').remove_mask();
     return _react2.default.createElement(
       'div',
       { className: "show-post", id: "show_post" },

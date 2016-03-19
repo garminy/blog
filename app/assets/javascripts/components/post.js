@@ -3,10 +3,10 @@ import React from 'react';
 var Post = React.createClass({
   componentWillReceiveProps: function() {
     // remove the loading mask at main post area
-    $('#show_post').remove_mask();
   }, 
 
   render: function() {
+    $('#show_post').remove_mask();
     return (
       <div className={"show-post"} id={"show_post"}>
         <h2 className={"post-title"}>{ this.props.title }</h2>
