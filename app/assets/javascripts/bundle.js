@@ -277,13 +277,14 @@ var Post = _react2.default.createClass({
 
   render: function render() {
     $('#show_post').remove_mask();
+    var post = this.props.post;
     return _react2.default.createElement(
       'div',
       { className: "show-post", id: "show_post" },
       _react2.default.createElement(
         'h2',
         { className: "post-title" },
-        this.props.title
+        post.title
       ),
       _react2.default.createElement(
         'div',
@@ -296,19 +297,20 @@ var Post = _react2.default.createClass({
             'span',
             { className: "post-date" },
             '王若愚Max 发表于 ',
-            this.props.createdAt
+            post.created_at
           )
         ),
         _react2.default.createElement(
           'div',
           { className: "tags-info" },
-          _react2.default.createElement('i', { className: "ion-pricetags" })
+          _react2.default.createElement('i', { className: "ion-pricetags" }),
+          post.tag_list
         )
       ),
       _react2.default.createElement(
         'div',
         { className: "post-content" },
-        this.props.content
+        post.content
       )
     );
   }
@@ -399,7 +401,7 @@ var PostShow = _react2.default.createClass({
     // .main-title
     var mainTitle = _react2.default.createElement(_main_title2.default, { title: post.title });
     // Main Post
-    var postMain = _react2.default.createElement(_post2.default, { title: post.title, content: post.content, key: post.id, createdAt: post.created_at });
+    var postMain = _react2.default.createElement(_post2.default, { post: post });
 
     return _react2.default.createElement(
       'div',
@@ -539,7 +541,7 @@ var PostsIndex = _react2.default.createClass({
     // .main-title
     var mainTitle = _react2.default.createElement(_main_title2.default, { title: post.title });
     // Main Post
-    var postMain = _react2.default.createElement(_post2.default, { title: post.title, content: post.content, key: post.id, createdAt: post.created_at });
+    var postMain = _react2.default.createElement(_post2.default, { post: post });
 
     return _react2.default.createElement(
       'div',

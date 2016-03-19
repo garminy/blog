@@ -2,6 +2,7 @@ json.post do
   json.title @post.title
   json.user_id @post.user_id
   json.content @post.content
+  json.tag_list @post.tag_list.join(' · ')
   json.created_at @post.created_at.to_date
 end
 

@@ -62,7 +62,7 @@ const PostShow = React.createClass({
     )
     // Main Post
     var postMain = (
-      <Post title={post.title} content={post.content} key={post.id} createdAt={post.created_at} />
+      <Post post={post} />
     );
 
     return (
