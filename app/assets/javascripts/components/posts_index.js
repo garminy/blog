@@ -17,7 +17,7 @@ const PostsIndex = React.createClass({
     }
   }, 
 
-  _fetchData: function() {
+  _fetchData: function(nextProps) {
     var that = this;
     return $.ajax({
       url: "/posts.json", 
@@ -34,13 +34,14 @@ const PostsIndex = React.createClass({
     });
   },
 
-  componentWillReceiveProps: function() {
-    this._fetchData();
+  componentWillReceiveProps: function(nextProps) {
+    this._fetchData(nextProps);
+    return true;
   },
 
   componentDidMount: function() {
     $.bind_left_sidebar();
-    this._fetchData();
+    this._fetchData(this.props);
   }, 
 
   componentDidUpdate: function() {

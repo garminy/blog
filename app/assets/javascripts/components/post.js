@@ -6,7 +6,6 @@ var Post = React.createClass({
   }, 
 
   render: function() {
-    $('#show_post').remove_mask();
     var post = this.props.post;
     return (
       <div className={"show-post"} id={"show_post"}>

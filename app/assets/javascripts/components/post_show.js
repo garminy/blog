@@ -14,14 +14,13 @@ const PostShow = React.createClass({
       }
     }
   }, 
-  _fetchData: function() {
+  _fetchData: function(nextProps) {
     var that = this;
     return $.ajax({
-      url: "/posts/" + this.props.params.id + ".json", 
+      url: "/posts/" + nextProps.params.id + ".json", 
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log("postShow Ajax data: ", data)
         that.setState({
           data: data
         });
@@ -36,15 +35,15 @@ const PostShow = React.createClass({
     $.setup_styles();
   }, 
 
-  componentWillReceiveProps: function() {
-    this._fetchData();
+  componentWillReceiveProps: function(nextProps) {
+    this._fetchData(nextProps);
     return true;
   }, 
 
   /* 加载组件 */
   componentDidMount: function() {
     $.bind_left_sidebar();
-    this._fetchData();
+    this._fetchData(this.props);
   }, 
 
   render: function() {

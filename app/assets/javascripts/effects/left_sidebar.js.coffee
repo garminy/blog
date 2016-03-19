@@ -9,11 +9,6 @@ $.bind_left_sidebar = ->
 $.setup_styles = ->
   set_left_sidebar_margin()
 
-# show a mask when loading a post
-$(document).delegate('.side-post', 'click', ->
-  $('#show_post').add_mask()
-)
-
 set_left_sidebar_margin = ->
   document_height = $(document).height()
   window_height = $(window).height()

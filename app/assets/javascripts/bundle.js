@@ -256,59 +256,58 @@ var MainTitle = _react2.default.createClass({
 exports.default = MainTitle;
 
 },{"react":237}],6:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Post = _react2.default.createClass({
-  displayName: 'Post',
+  displayName: "Post",
 
   componentWillReceiveProps: function componentWillReceiveProps() {
     // remove the loading mask at main post area
   },
 
   render: function render() {
-    $('#show_post').remove_mask();
     var post = this.props.post;
     return _react2.default.createElement(
-      'div',
+      "div",
       { className: "show-post", id: "show_post" },
       _react2.default.createElement(
-        'h2',
+        "h2",
         { className: "post-title" },
         post.title
       ),
       _react2.default.createElement(
-        'div',
+        "div",
         { className: "post-extra" },
         _react2.default.createElement(
-          'div',
+          "div",
           { className: "author-info" },
-          _react2.default.createElement('i', { className: "ion-person" }),
+          _react2.default.createElement("i", { className: "ion-person" }),
           _react2.default.createElement(
-            'span',
+            "span",
             { className: "post-date" },
-            '王若愚Max 发表于 ',
+            "王若愚Max 发表于 ",
             post.created_at
           )
         ),
         _react2.default.createElement(
-          'div',
+          "div",
           { className: "tags-info" },
-          _react2.default.createElement('i', { className: "ion-pricetags" }),
+          _react2.default.createElement("i", { className: "ion-pricetags" }),
           post.tag_list
         )
       ),
       _react2.default.createElement(
-        'div',
+        "div",
         { className: "post-content" },
         post.content
       )
@@ -358,14 +357,13 @@ var PostShow = _react2.default.createClass({
       }
     };
   },
-  _fetchData: function _fetchData() {
+  _fetchData: function _fetchData(nextProps) {
     var that = this;
     return $.ajax({
-      url: "/posts/" + this.props.params.id + ".json",
+      url: "/posts/" + nextProps.params.id + ".json",
       dataType: 'json',
       cache: false,
       success: function success(data) {
-        console.log("postShow Ajax data: ", data);
         that.setState({
           data: data
         });
@@ -380,15 +378,15 @@ var PostShow = _react2.default.createClass({
     $.setup_styles();
   },
 
-  componentWillReceiveProps: function componentWillReceiveProps() {
-    this._fetchData();
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    this._fetchData(nextProps);
     return true;
   },
 
   /* 加载组件 */
   componentDidMount: function componentDidMount() {
     $.bind_left_sidebar();
-    this._fetchData();
+    this._fetchData(this.props);
   },
 
   render: function render() {
@@ -502,7 +500,7 @@ var PostsIndex = _react2.default.createClass({
     };
   },
 
-  _fetchData: function _fetchData() {
+  _fetchData: function _fetchData(nextProps) {
     var that = this;
     return $.ajax({
       url: "/posts.json",
@@ -519,13 +517,14 @@ var PostsIndex = _react2.default.createClass({
     });
   },
 
-  componentWillReceiveProps: function componentWillReceiveProps() {
-    this._fetchData();
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    this._fetchData(nextProps);
+    return true;
   },
 
   componentDidMount: function componentDidMount() {
     $.bind_left_sidebar();
-    this._fetchData();
+    this._fetchData(this.props);
   },
 
   componentDidUpdate: function componentDidUpdate() {
@@ -709,10 +708,10 @@ var TaggedPosts = _react2.default.createClass({
     };
   },
 
-  _fetchData: function _fetchData() {
+  _fetchData: function _fetchData(nextProps) {
     var that = this;
     return $.ajax({
-      url: '/posts/tags/' + this.props.params.tag + '.json',
+      url: '/posts/tags/' + nextProps.params.tag + '.json',
       dataType: 'json',
       cache: false,
       success: function success(data) {
@@ -726,13 +725,13 @@ var TaggedPosts = _react2.default.createClass({
     });
   },
 
-  componentWillReceiveProps: function componentWillReceiveProps() {
-    this._fetchData();
+  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+    this._fetchData(nextProps);
   },
 
   componentDidMount: function componentDidMount() {
     $.bind_left_sidebar();
-    this._fetchData();
+    this._fetchData(this.props);
   },
 
   componentDidUpdate: function componentDidUpdate() {

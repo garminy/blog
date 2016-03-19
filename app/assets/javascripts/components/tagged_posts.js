@@ -18,10 +18,10 @@ const TaggedPosts = React.createClass({
     }
   }, 
 
-  _fetchData: function() {
+  _fetchData: function(nextProps) {
     var that = this;
     return $.ajax({
-      url: `/posts/tags/${this.props.params.tag}.json`, 
+      url: `/posts/tags/${nextProps.params.tag}.json`, 
       dataType: 'json',
       cache: false,
       success: function(data) {
@@ -35,13 +35,13 @@ const TaggedPosts = React.createClass({
     });
   },
 
-  componentWillReceiveProps: function() {
-    this._fetchData();
+  componentWillReceiveProps: function(nextProps) {
+    this._fetchData(nextProps);
   },
 
   componentDidMount: function() {
     $.bind_left_sidebar();
-    this._fetchData();
+    this._fetchData(this.props);
   }, 
 
   componentDidUpdate: function() {
